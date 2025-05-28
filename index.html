@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="/icon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>InnSneaks</title>
+    <style type="text/tailwindcss">
+        html{
+            @apply overflow-x-hidden scroll-smooth;
+        }
+        section {
+            @apply py-20 md:py-28;
+        }
+        h1 {
+            @apply text-3xl md:text-4xl xl:text-5xl font-bold;
+        }
+        h2 {
+            @apply text-2xl md:text-3xl xl:text-4xl;
+        }
+        h3 {
+            @apply text-xl md:text-2xl xl:text-3xl;
+        }
+        .swiper-pagination-bullet {
+            @apply bg-green-500 w-3 h-3;
+        }
+        @theme {
+            --animate-wiggle: wiggle 3s ease-in-out infinite;
+            --animate-spin: spin 5s ease-in-out infinite;
+            --animate-bounce: bounce 5s ease-in-out infinite;
+            --animate-pulse: pulse 5s ease-in-out infinite;
+            @keyframes wiggle {
+                0%,
+                100% {
+                transform: rotate(-3deg);
+                }
+                50% {
+                transform: rotate(3deg);
+                }
+            }
+        }
+    </style>
+</head>
+<body class="bg-green-950 text-white tracking-wider">
+    <header id="navbar" class="bg-green-950 fixed w-full top-0 left-0 z-50">
+        <nav class="flex items-center justify-between container mx-auto h-16 sm:h-20 p-8">
+            <div class="sm:text-2xl">InnSneaks</div>
+
+            <div id="nav-menu" class="absolute top-0 left-[-100%] min-h-[80vh] w-full bg-green-950/8 backdrop-blur-sm flex items-center justify-center duration-300 overflow-hidden lg:static lg:min-h-fit lg:bg-transparent lg:w-auto">
+                <ul class="flex flex-col items-center gap-12 lg:flex-row">
+                    <li><a href="#home" class="text-lg font-bold duration-300 hover:text-yellow-500 nav-link"><i class='bx bxs-home-smile'></i>Home</a></li>
+                    <li><a href="#about" class="text-lg font-bold duration-300 hover:text-yellow-500 nav-link"><i class='bx bxs-info-square'></i>About</a></li>
+                    <li><a href="#popular" class="text-lg font-bold duration-300 hover:text-yellow-500 nav-link"><i class='bx bxs-crown'></i>Popular</a></li>
+                    <li><a href="#review" class="text-lg font-bold duration-300 hover:text-yellow-500 nav-link"><i class='bx bx-podcast'></i>Review</a></li>
+                </ul>
+
+                <div class=" absolute bottom-0 -right-10 opacity-70 lg:hidden">
+                    <img src="featured1.png" alt="Sneaker1" class="w-32">
+                </div>
+                <div class="absolute -top-5 left-0 rotate-40 opacity-70 lg:hidden">
+                    <img src="featured2.png" alt="Sneaker2" class="w-32">
+                </div>
+            </div>
+            <div class="text-xl sm:text-4xl cursor-pointer z-50 lg:hidden">
+                <i class='bx bxs-food-menu' id="hamburger"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- *************** Home Section *************** -->
+        <section id="home">
+            <div class="container mx-auto">
+
+                <!-- Blob -->
+                 <div class="w-64 h-64 bg-green-700 rounded-full blur-3xl -z-10 opacity-40 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+                <!-- Blob 2 -->
+                 <div class="w-64 h-64 bg-green-700 rounded-full blur-3xl -z-10 opacity-40 absolute bottom-0 right-0"></div>
+
+
+                <div class="flex flex-col items-center gap-5 lg:flex-row w-full px-12 lg:pt-20">
+                    <!-- contant -->
+                    <div class="w-full space-y-6 lg:w-1/2">
+                        <h1>
+                            <span class="text-yellow-500">Sneakers</span> make a
+                            <br> positive
+                            <span class="text-yellow-500">impact</span> on <br>
+                            your fashion
+                        </h1>
+                        <p class="text-slate-300">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident exercitationem amet laborum voluptatem repudiandae facilis cum, quaerat blanditiis, maiores corporis, excepturi quidem ex fuga culpa ea minus magni illum dolorum!</p>
+                        <div class="flex flex-col gap-2 sm:flex-row md:gap-5 lg:pt-5 xl:pt-10">
+                            <button class="border border-yellow-500 bg-yellow-500 rounded-full px-5 py-2 duration-700 hover:opacity-70 hover:scale-98">
+                                <span class="font-bold">Shop Now</span>
+                                <i class='bx bx-closet'></i>
+                            </button>
+                            <button class="border border-yellow-500 bg-transparent rounded-full px-5 py-2 duration-700 hover:bg-yellow-500 hover:scale-98 hover:text-green-950">
+                                <span class="font-bold">Know More</span>
+                                <i class='bx bxs-info-circle'></i>
+                            </button>
+                        </div>
+                        <p class="text-xs text-slate-300">You will get 30 days Free Trial!</p>
+
+                        <div class="flex items-center gap-12 text-2xl lg:pt-10 lg:text-4xl">
+                            <i class='bx bxl-facebook-square text-slate-300 hover:text-yellow-500 duration-300 cursor-pointer'></i>
+                            <i class='bx bxl-twitter text-slate-300 hover:text-yellow-500 duration-300 cursor-pointer'></i>
+                            <i class='bx bxl-instagram-alt text-slate-300 hover:text-yellow-500 duration-300 cursor-pointer'></i>
+                            <i class='bx bxl-linkedin-square text-slate-300 hover:text-yellow-500 duration-300 cursor-pointer'></i>
+                        </div>
+                    </div>
+
+                    <!-- Image -->
+                     <div class="w-full relative lg:w-1/2">
+                        <img src="new1.png" alt="" class="hover:rotate-10 hover:scale-110 duration-600 animate-wiggle">
+
+                        <div class="absolute -top-10 right-0 opacity-30 lg:right-50 lg:-top-20">
+                            <i class='bx bx-closet text-8xl text-yellow-500 rotate-40 lg:rotate-160 animate-spin'></i>
+                        </div>
+                        <div class="absolute bottom-0 left-0 opacity-30">
+                            <i class='bx bx-store text-8xl text-yellow-500 rotate-160 lg:rotate-300 animate-pulse'></i>
+                        </div>
+                        <div class="absolute bottom-5 right-20 opacity-35">
+                            <i class='bx bx-male-female text-8xl text-yellow-500 rotate-300 lg:rotate-40 animate-bounce'></i>
+                        </div>
+                     </div>
+                </div>
+            </div>
+         </section>
+
+         <!-- ************ Services Section**************** -->
+          <div class="bg-white text-green-900 py-20">
+            <div class="container mx-auto w-full grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
+                <!-- Card 1 -->
+                 <div class="border border-green-900 p-5 cursor-pointer rounded-md hover:shadow-2xl hover:-translate-y-1 duration-300">
+                    <div class="flex items-center gap-6">
+                        <i class='bx bxs-truck text-3xl md:text-4xl lg:text-5xl'></i>
+                        <p class="md:text-lg font-bold">Fast <br> Delivery</p>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe tempora harum accusantium earum suscipit dolore?</p>
+                 </div>
+                <!-- Card 2 -->
+                 <div class="border border-green-900 p-5 cursor-pointer rounded-md hover:shadow-2xl hover:-translate-y-1 duration-300">
+                    <div class="flex items-center gap-6">
+                        <i class='bx bxs-phone-call text-3xl md:text-4xl lg:text-5xl'></i>
+                        <p class="md:text-lg font-bold">Great Customer <br> Service</p>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe tempora harum accusantium earum suscipit dolore?</p>
+                 </div>
+                <!-- Card 3 -->
+                 <div class="border border-green-900 p-5 cursor-pointer rounded-md hover:shadow-2xl hover:-translate-y-1 duration-300">
+                    <div class="flex items-center gap-6">
+                        <i class='bx bxs-universal-access text-3xl md:text-4xl lg:text-5xl'></i>
+                        <p class="md:text-lg font-bold">Universal <br> Designs</p>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe tempora harum accusantium earum suscipit dolore?</p>
+                 </div>
+                <!-- Card 4 -->
+                 <div class="border border-green-900 p-5 cursor-pointer rounded-md hover:shadow-2xl hover:-translate-y-1 duration-300">
+                    <div class="flex items-center gap-6">
+                        <i class='bx bxs-dollar-circle text-3xl md:text-4xl lg:text-5xl'></i>
+                        <p class="md:text-lg font-bold">Affordable <br> Pricing</p>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe tempora harum accusantium earum suscipit dolore?</p>
+                 </div>
+            </div>
+          </div>
+
+          <!-- *********** About Us *********************** -->
+           <section id="about" class="relative overflow-hidden">
+            <div class="absolute -top-8 -right-12 opacity-50">
+                <img src="collection2.png" class="w-40 md:w-52 xl:w-64" alt="">
+            </div>
+            <div class="flex flex-col items-center gap-3 text-center mb-10 md:mb-20">
+                <h2 class="text-yellow-500">About Us</h2>
+                <p class="max-w-2xl">Follow Instructions for more</p>
+            </div>
+
+            <div class="container mx-auto space-y-10 xl:space-y-0"> 
+                <!-- Item 1 -->
+                 <div class="flex flex-col text-center items-center lg:flex-row gap-6">
+                    <!-- image -->
+                     <div class="w-full flex justify-center lg:w-1/2 xl:w-2/3 mx-auto">
+                        <img src="shoe-6.png" alt="" class="w-full sm:w-2/3">
+                     </div>
+
+                     <!-- Content -->
+                      <div class="w-full lg:w-1/2">
+                        <div class="space-y-5">
+                            <h3>Make your <span class="text-yellow-500">Authentic</span> <br> Collections</h3>
+                            <p class="text-slate-300">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates inventore voluptatum atque velit veniam corrupti, aliquam debitis deserunt quis officiis harum repudiandae reiciendis deleniti? Neque libero esse sequi similique quidem iusto sit accusamus amet? Praesentium!</p>
+                        </div>
+                      </div>
+                 </div>
+                <!-- Item 1 -->
+                 <div class="flex flex-col text-center items-center lg:flex-row-reverse gap-6">
+                    <!-- image -->
+                     <div class="w-full flex justify-center lg:w-1/2 xl:w-2/3 mx-auto">
+                        <img src="shoe-1.png" alt="" class="w-full sm:w-2/3">
+                     </div>
+
+                     <!-- Content -->
+                      <div class="w-full lg:w-1/2">
+                        <div class="space-y-5">
+                            <h3>Come make <span class="text-yellow-500">Your Fit</span> <br> With Us</h3>
+                            <p class="text-slate-300">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates inventore voluptatum atque velit veniam corrupti, aliquam debitis deserunt quis officiis harum repudiandae reiciendis deleniti? Neque libero esse sequi similique quidem iusto sit accusamus amet? Praesentium!</p>
+                        </div>
+                      </div>
+                 </div>
+            </div>
+           </section>
+
+           <!-- ************** Popular ************ -->
+            <section id="popular" class="bg-green-900">
+                <div class="flex flex-col items-center gap-3 text-center mb-40 md:mb-28">
+                    <h2 class="text-yellow-500 italic">Your Choice Of Fashion</h2>
+                    <p class="max-w-2xl">Follow Instructions for More.</p>
+                </div>
+
+                <div class="container grid grid-cols-1 mx-auto w-full gap-10 md:grid-cols-2 xl:grid-cols-4">
+                    <!-- Card 1 -->
+                     <div class="bg-green-950 p-10 pt-24 rounded-md relative group">
+                        <img src="featured2.png" alt="" class="w-56 absolute -top-5 left-1/2 transform -translate-x-1/2 -translate-y-1/2 duration-600 group-hover:-top-8">
+                        <p class="italic">Delacare Fits</p>
+                        <h3>Alabama Store</h3>
+
+                        <div class="text-yellow-500 text-xs py-3">
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star-half'></i>
+                            <i class='bx bx-star text-gray-400'></i>
+                            <i class='bx bx-star text-gray-400'></i>
+                        </div>
+
+                        <div class="flex items-center justify-between">
+                            <p class="text-xl">$55</p>
+                            <button class="bg-yellow-500 px-2 py-1 rounded-sm text-xl"><i class='bx bxs-cart-alt'></i></button>
+                        </div>
+                     </div>
+                    <!-- Card 2 -->
+                     <div class="bg-green-950 p-10 pt-24 rounded-md relative group">
+                        <img src="featured3.png" alt="" class="w-56 absolute -top-5 left-1/2 transform -translate-x-1/2 -translate-y-1/2 duration-600 group-hover:-top-8">
+                        <p class="italic">Delacare Fits</p>
+                        <h3>Alabama Store</h3>
+
+                        <div class="text-yellow-500 text-xs py-3">
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star-half'></i>
+                            <i class='bx bx-star text-gray-400'></i>
+                            <i class='bx bx-star text-gray-400'></i>
+                        </div>
+
+                        <div class="flex items-center justify-between">
+                            <p class="text-xl">$55</p>
+                            <button class="bg-yellow-500 px-2 py-1 rounded-sm text-xl"><i class='bx bxs-cart-alt'></i></button>
+                        </div>
+                     </div>
+                    <!-- Card 3 -->
+                     <div class="bg-green-950 p-10 pt-24 rounded-md relative group">
+                        <img src="featured2.png" alt="" class="w-56 absolute -top-5 left-1/2 transform -translate-x-1/2 -translate-y-1/2 duration-600 group-hover:-top-8">
+                        <p class="italic">Delacare Fits</p>
+                        <h3>Alabama Store</h3>
+
+                        <div class="text-yellow-500 text-xs py-3">
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star-half'></i>
+                            <i class='bx bx-star text-gray-400'></i>
+                            <i class='bx bx-star text-gray-400'></i>
+                        </div>
+
+                        <div class="flex items-center justify-between">
+                            <p class="text-xl">$55</p>
+                            <button class="bg-yellow-500 px-2 py-1 rounded-sm text-xl"><i class='bx bxs-cart-alt'></i></button>
+                        </div>
+                     </div>
+                    <!-- Card 3 -->
+                     <div class="bg-green-950 p-10 pt-24 rounded-md relative group">
+                        <img src="featured3.png" alt="" class="w-56 absolute -top-5 left-1/2 transform -translate-x-1/2 -translate-y-1/2 duration-600 group-hover:-top-8">
+                        <p class="italic">Delacare Fits</p>
+                        <h3>Alabama Store</h3>
+
+                        <div class="text-yellow-500 text-xs py-3">
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star-half'></i>
+                            <i class='bx bx-star text-gray-400'></i>
+                            <i class='bx bx-star text-gray-400'></i>
+                        </div>
+
+                        <div class="flex items-center justify-between">
+                            <p class="text-xl">$55</p>
+                            <button class="bg-yellow-500 px-2 py-1 rounded-sm text-xl"><i class='bx bxs-cart-alt'></i></button>
+                        </div>
+                     </div>
+                </div>
+            </section>
+
+            <!-- ************Review ************ -->
+             <section id="review" class="relative mb-20 md:mb-28 overflow-hidden">
+                <div class="absolute top-0 left-2 opacity-50">
+                    <img src="collection2.png" class="w-40 md:w-52 xl:w-64" alt="">
+                </div>
+                <div class="flex flex-col items-center gap-3 text-center mb-40 md:mb-28">
+                    <h2 class="text-yellow-500 italic">Customer Review</h2>
+                    <p class="max-w-2xl">Follow Instructions for More.</p>
+                </div>
+
+                <div class="container mx-auto">
+                    <div class="swiper py-12">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide">
+                                <div class="flex flex-col gap-5 bg-green-900 rounded-md p-6">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore earum placeat ratione rerum eaque adipisci corrupti perspiciatis nihil esse, ea maxime? Molestias.</p>
+                                    <div class="flex items-center">
+                                        <img src="3.jpg" alt="" class="w-24 h-24 rounded-full">
+                                        <div class="ml-2">
+                                            <p class="text-yellow-500 uppercase">John Doe</p>
+                                            <p>Designer</p>
+                                        </div>
+                                        <i class='bx bxs-quote-right text-4xl ml-auto'></i>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="flex flex-col gap-5 bg-green-900 rounded-md p-6">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore earum placeat ratione rerum eaque adipisci corrupti perspiciatis nihil esse, ea maxime? Molestias.</p>
+                                    <div class="flex items-center">
+                                        <img src="1.jpg" alt="" class="w-24 h-24 rounded-full">
+                                        <div class="ml-2">
+                                            <p class="text-yellow-500 uppercase">John Doe</p>
+                                            <p>Designer</p>
+                                        </div>
+                                        <i class='bx bxs-quote-right text-4xl ml-auto'></i>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="flex flex-col gap-5 bg-green-900 rounded-md p-6">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore earum placeat ratione rerum eaque adipisci corrupti perspiciatis nihil esse, ea maxime? Molestias.</p>
+                                    <div class="flex items-center">
+                                        <img src="2.jpg" alt="" class="w-24 h-24 rounded-full">
+                                        <div class="ml-2">
+                                            <p class="text-yellow-500 uppercase">John Doe</p>
+                                            <p>Designer</p>
+                                        </div>
+                                        <i class='bx bxs-quote-right text-4xl ml-auto'></i>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="flex flex-col gap-5 bg-green-900 rounded-md p-6">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore earum placeat ratione rerum eaque adipisci corrupti perspiciatis nihil esse, ea maxime? Molestias.</p>
+                                    <div class="flex items-center">
+                                        <img src="3.jpg" alt="" class="w-24 h-24 rounded-full">
+                                        <div class="ml-2">
+                                            <p class="text-yellow-500 uppercase">John Doe</p>
+                                            <p>Designer</p>
+                                        </div>
+                                        <i class='bx bxs-quote-right text-4xl ml-auto'></i>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="flex flex-col gap-5 bg-green-900 rounded-md p-6">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore earum placeat ratione rerum eaque adipisci corrupti perspiciatis nihil esse, ea maxime? Molestias.</p>
+                                    <div class="flex items-center">
+                                        <img src="4.jpg" alt="" class="w-24 h-24 rounded-full">
+                                        <div class="ml-2">
+                                            <p class="text-yellow-500 uppercase">John Doe</p>
+                                            <p>Designer</p>
+                                        </div>
+                                        <i class='bx bxs-quote-right text-4xl ml-auto'></i>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+             </section>
+
+             <!-- **************Footer ************** -->
+              <footer class="bg-yellow-100 text-green-950 pt-20 pb-10 md:pt-28 relative">
+                <!-- newsletter -->
+                 <div class="container mx-auto absolute text-white top-0 left-0 right-0 -translate-y-1/2">
+                    <div class="bg-green-900 px-10 pt-5 pb-10 space-y-5 rounded-md md:text-center">
+                        <h3><span class="text-yellow-500">Subscribe</span> to our <br> newsletter</h3>
+
+                        <div class="flex flex-col md:flex-row gap-2 md:justify-center">
+                            <input type="email" placeholder="Your Email Address" class="w-full px-5 py-3 text-green-900 rounded-md outline-none bg-white md:max-w-1/2">
+                            <button class="flex items-center justify-center gap-1 bg-green-950 px-5 py-3 rounded-md hover:opacity-70 hover:translate-y-1 duration-600">
+                                <span>Subscribe</span>
+                                <i class='bx bxs-paper-plane'></i>
+                            </button>
+                        </div>
+                    </div>
+                 </div>
+
+                 <!-- social Icons -->
+                  <div class="container mx-auto mt-20 mb-10">
+                    <div class="border-b border-green-500 relative">
+                        <div class="absolute top-0 transform -translate-y-1/2 left-0 right-0 max-w-50 mx-auto">
+                            <div class="bg-yellow-100 text-2xl text-center space-x-2">
+                                <i class='bx bxl-facebook-square hover:text-yellow-500 duration-300 cursor-pointer'></i>
+                                <i class='bx bxl-twitter hover:text-yellow-500 duration-300 cursor-pointer'></i>
+                                <i class='bx bxl-instagram-alt hover:text-yellow-500 duration-300 cursor-pointer'></i>
+                                <i class='bx bxl-linkedin-square hover:text-yellow-500 duration-300 cursor-pointer'></i>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+
+                  <!-- Content -->
+                   <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center md:text-start">
+                    <!-- Item 1 -->
+                     <div>
+                        <div class="text-7xl text-green700 text-center inline-block">
+                            <i class='bx bx-closet'></i>
+                            <p class="text-xl sm:text-4xl italic">InnSneaks</p>
+                        </div>
+                     </div>
+                     <!-- Item 2 -->
+                      <div>
+                        <p class="mb-5 font-bold text-xl">Quick Links</p>
+
+                        <div class="flex flex-col gap-1">
+                            <a href="#">Sneakers</a>
+                            <a href="#">Floaters</a>
+                            <a href="#">Dredgers</a>
+                            <a href="#">TakeOns</a>
+                            <a href="#">Trekkers</a>
+                        </div>
+                      </div>
+                     <!-- Item 3 -->
+                      <div>
+                        <p class="mb-5 font-bold text-xl">Popular Services</p>
+
+                        <div class="flex flex-col gap-1">
+                            <a href="#">WholeSales</a>
+                            <a href="#">Walk In Stores</a>
+                            <a href="#">Online Services</a>
+                            <a href="#">Trekkers</a>
+                        </div>
+                      </div>
+                     <!-- Item 3 -->
+                      <div>
+                        <p class="mb-5 font-bold text-xl">Contact Us</p>
+
+                        <div class="flex flex-col gap-1">
+                            <a href="tel:+23490193344795">+234 9019 334 4795</a>
+                            <a href="mailto:deepscodes@yahoo.com">deepscodes@yahoo.com</a>
+                            <br>
+                            <p>1234 Allison ave CSS City Webland 56765, NIG</p>
+                        </div>
+                      </div>
+                   </div>
+
+                   <!-- copyright -->
+                    <div class="container mx-auto">
+                        <p class="text-center mt-10 opacity-50">Copyright &copy; 2025 DeepsCodes. All Rights reserved.</p>
+                    </div>
+
+                    <div class="absolute bottom-0 left-50 opacity-10 pointer-events-none max-w-200">
+                        <img src="women2.png" class="w-full" alt="">
+                    </div>
+                    <div class="absolute top-70 right-37 opacity-10 pointer-events-none max-w-200">
+                        <img src="women1.png" class="w-full" alt="">
+                    </div>
+                    <div class="absolute bottom-44 right-120 opacity-10 pointer-events-none max-w-200">
+                        <img src="women4.png" class="w-full" alt="">
+                    </div>
+              </footer>
+
+              <!-- Scroll up -->
+               <a href="#" class="fixed right-4 -bottom-1/2 bg-yellow-500 shadow-sm inline-block px-3 py-1 md:px-4 md:py-2 rounded-md text-lg z-50 hover:-translate-y-1 duration-300" id="scroll-up">
+                <i class='bx bxs-plane-alt'></i>
+               </a>
+    </main>
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
